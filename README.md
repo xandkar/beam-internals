@@ -1,4 +1,4 @@
-Beam Internals
+BEAM Internals
 ==============
 
 An attempt to gather and organize implementation details of Erlang's virtual
