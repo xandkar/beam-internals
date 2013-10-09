@@ -3,6 +3,32 @@ BEAM Instruction Set
 
 Source: http://erlangonxen.org/more/beam
 
+### Overview
+The BEAM virtual machine uses two kinds of instructions. The first — generic —
+kind is used by BEAM modules. Generic instructions are dumped when a BEAM
+module is disassembled. When a module gets loaded, generic instructions are
+transformed into a second — true — kind, which are subsequently executed by the
+emulator.
+
+The present semi-formal specification defines semantics of the true instruction
+set. The specification is derived from the BEAM v5.9.1 source code.
+
+The Ling virtual machine does all code transformation during compile time. The
+Ling instruction set is quite similar. We were able to introduce a number of
+enhancements that reflect different optimization targets of Ling.
+
+### Undocumented Instructions
+The following rare/unused/obscure instructions are not documented:
+
+- `too_old_compiler`
+- `i_trace_breakpoint`, `i_debug_breakpoint`, `i_count_breakpoint`,
+  `i_time_breakpoint`
+- `i_return_time_trace`, `i_return_to_trace`, `return_trace`
+- `normal_exit`, `continue_exit`
+- `apply_bif`, `unsupported_guard_bif`
+- `call_nif`, `on_load`
+- `call_error_handler`, `call_traced_function`
+
 
 allocate
 ------------------------------
