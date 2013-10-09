@@ -48,6 +48,27 @@ The model of the BEAM virtual machine contains the following elements:
 by the process. Many instructions take this parameter to be able to perform
 garbage collection, if necessary.
 
+### Argument Types
+Types of instruction arguments are encoded by single character codes. The
+meaning of these codes is given in the table below.
+
+| Type |  Description
+|------|-------------------------------------------------
+| `t`  | An arbitrary term, e.g. {ok,[]}
+| `I`  | An integer literal, e.g. 137
+| `x`  | A register, r.g. R1
+| `y`  | A stack slot
+| `c`  | An immediate term, i.e. atom/small int/nil
+| `a`  | An atom, e.g. 'ok'
+| `f`  | A code label
+| `s`  | Either a literal, a register or a stack slot
+| `d`  | Either a register or a stack slot
+| `r`  | A register R0
+| `P`  | A unsigned integer literal
+| `j`  | An optional code label
+| `e`  | A reference to an export table entry
+| `l`  | A floating-point register
+
 
 allocate
 ------------------------------
