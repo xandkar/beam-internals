@@ -1,0 +1,4 @@
+Tom Parker <thpr@yahoo.com>
+http://erlang.org/pipermail/erlang-questions/2012-May/066861.html
+http://dl.dropbox.com/u/80510194/doc.pdf
+http://dl.dropbox.com/u/80510194/doc.tex
