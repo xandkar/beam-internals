@@ -29,6 +29,25 @@ The following rare/unused/obscure instructions are not documented:
 - `call_nif`, `on_load`
 - `call_error_handler`, `call_traced_function`
 
+### Model Elements
+The model of the BEAM virtual machine contains the following elements:
+
+-  Registers R0-R255. R0 is a special 'fast' register.
+-  IP (instruction pointer) contains the reference to the instruction being
+   executed.
+-  CP (continuation pointer) contains a return address of the current function
+   call.
+-  EP (stack pointer) points to the last value pushed on stack.
+-  HTOP (heap top) points to the first empty word of the heap.
+-  The message queue. SAVE pointer marks the message being currently matched.
+-  tmpA and tmpB variables that temporarily hold values for the imminent
+   arithmetic or logical operation.
+-  Floating-point registers FR0-FR15.
+
+'Live' refers to the current number of registers that hold values still needed
+by the process. Many instructions take this parameter to be able to perform
+garbage collection, if necessary.
+
 
 allocate
 ------------------------------
